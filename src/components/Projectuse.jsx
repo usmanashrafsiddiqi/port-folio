@@ -26,7 +26,7 @@ const Projectuse = () => {
     },
     {
       title: "QR Code Generator",
-      image: "/assets/download (1).png",
+      image: "/assets/qr.png",
       link: "https://your-link-to-etv.com",
     },
     {
