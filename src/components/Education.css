@@ -53,3 +53,23 @@
 .education-item p {
     font-size: 1rem; /* Adjust paragraph size */
 }
+
+/* Mobile Styles */
+@media screen and (max-width: 640px) {
+    .education-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .education-image {
+        width: 100%; /* Make the image full width on small screens */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 1rem; /* Add space below the image */
+    }
+
+    .education-item h3,
+    .education-item p {
+        font-size: 1.2rem; /* Adjust font size for mobile */
+    }
+}
