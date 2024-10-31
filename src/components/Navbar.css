@@ -83,7 +83,7 @@
     }
 
     .nav-menu li a {
-        font-size: 2rem; /* Larger text for mobile */
+        font-size: 1.2rem; /* Decreased text size for mobile */
         color: #ffffff; /* White text for contrast */
         transition: color 0.3s, transform 0.3s; /* Smooth color and transform transition */
     }
@@ -103,5 +103,25 @@
 
     .hamburger:hover {
         background-color: #ffcc00; /* Change color on hover */
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .nav-menu li a {
+        font-size: 1rem; /* Further decrease text size for smaller screens */
+    }
+
+    .header h1 {
+        font-size: 1.5rem; /* Decrease h1 size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .nav-menu li a {
+        font-size: 0.9rem; /* Further decrease text size for very small screens */
+    }
+
+    .header h1 {
+        font-size: 1.2rem; /* Further decrease h1 size for very small screens */
     }
 }

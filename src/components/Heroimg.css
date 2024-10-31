@@ -50,13 +50,15 @@
 
 .text-container h1 {
     font-size: 4rem;
-    padding: 0.6rem 0 1.5rem;
+    padding: 0.3rem 0 1rem; /* Reduced top padding */
+    margin: 0; /* Remove default margin */
 }
 
 .text-container p {
     font-size: 1.4rem;
     font-weight: 200;
     text-transform: uppercase;
+    margin: 0; /* Remove default margin */
 }
 
 .text-container .btn {
@@ -85,13 +87,14 @@
         text-align: center; /* Center text on smaller screens */
     }
     .text-container h1 {
-        font-size: 3rem;
-        padding: 0.6rem 0 1.5rem;
+        font-size: 2rem; /* Further decrease font size for smaller screens */
+        padding: 0.2rem 0 0.5rem; /* Adjust padding */
     }
     .text-container p {
-        font-size: 1.4rem;   
+        font-size: 0.8rem; /* Further decrease paragraph font size */
     }
     .your-image {
-        width: 80%; /* Adjust image size for smaller screens */
+        width: 70%; /* Adjust image size for smaller screens */
+        max-width: 200px; /* Set a smaller max width to maintain aspect ratio */
     }
 }
