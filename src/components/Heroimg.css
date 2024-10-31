@@ -81,18 +81,48 @@
         align-items: center; /* Center content */
         height: auto; /* Adjust height to auto for small screens */
     }
+
+    .content {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center items */
+        width: 100%; /* Ensure full width for content */
+    }
+
     .text-container {
         text-align: center; /* Center text on smaller screens */
+        padding: 0 1rem; /* Add padding for better spacing */
+        margin-bottom: 1rem; /* Add margin to create space below */
     }
+
+    .image-container {
+        margin-top: 0.5rem; /* Adjust space above the image */
+    }
+
     .text-container h1 {
-        font-size: 2rem; /* Further decrease font size for smaller screens */
+        font-size: 2.5rem; /* Decrease font size for smaller screens */
         padding: 0.4rem 0 1rem; /* Adjust padding */
     }
+
     .text-container p {
-        font-size: 0.8rem; /* Further decrease paragraph font size */
+        font-size: 1rem; /* Decrease paragraph font size */
     }
+
     .your-image {
-        width: 70%; /* Adjust image size for smaller screens */
+        width: 60%; /* Adjust image size for smaller screens */
         max-width: 200px; /* Set a smaller max width to maintain aspect ratio */
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .text-container h1 {
+        font-size: 1.5rem; /* Further decrease font size for very small screens */
+    }
+
+    .text-container p {
+        font-size: 0.8rem; /* Further decrease paragraph font size for very small screens */
+    }
+
+    .image-container {
+        margin-top: 0.3rem; /* Reduce space above the image */
     }
 }
