@@ -1,7 +1,7 @@
 import Home from './routes/Home'
 import About from './routes/About'
 import Project from './routes/Project'
-import Contact from './routes/contact.jsx'; // Use the correct case here
+import Contact from './routes/Contact.jsx'; // Use the correct case here
  // Check the case here
 
 import { Route, Routes } from 'react-router-dom'
