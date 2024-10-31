@@ -1,19 +1,21 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Heroimg2 from '../components/Heroimg2'
-import Aboutcontent from '../components/Aboutcontent'
-
+// src/About.jsx
+import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Heroimg2 from '../components/Heroimg2';
+import Aboutcontent from '../components/Aboutcontent';
+import Education from '../components/Education'; // Import the Education component
 
 const About = () => {
-  return (
-    <div>
-    <Navbar/>
-    <Heroimg2 heading={"About."} text= {"I am a front-end developer"}/>
-    <Aboutcontent/>
-    <Footer/>
-    </div>
-  )
+    return (
+        <div>
+            <Navbar />
+            <Heroimg2 heading={"About."} text={"I am a front-end developer"} />
+            <Aboutcontent />
+            <Education /> {/* Include the Education section */}
+            <Footer />
+        </div>
+    );
 }
 
-export default About
+export default About;

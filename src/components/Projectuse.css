@@ -1,0 +1,82 @@
+/* src/components/Projectuse.css */
+.projects {
+    padding: 2rem;
+    background-color: #121212; /* Dark background */
+    text-align: center;
+}
+
+.projects h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem; /* Increased font size */
+    color: #ffffff; /* Light color for headings */
+    transition: color 0.4s ease; /* Smooth color transition */
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increased minimum width */
+    gap: 2rem; /* Increased spacing between project cards */
+}
+
+.project-card {
+    background: #1e1e1e; /* Dark card background */
+    border: 3px solid #ff6347; /* Colorful border */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.25, 1.5, 0.5, 1), box-shadow 0.4s ease;
+    position: relative;
+    max-width: 350px; /* Set a max width for the project card */
+    margin: auto; /* Center cards within the grid */
+}
+
+.project-card:hover {
+    transform: translateY(-10px) rotate(3deg); /* Lift and rotate */
+    box-shadow: 0 8px 20px rgba(255, 99, 71, 0.5); /* Highlight shadow on hover */
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 99, 71, 0.4); /* Color overlay */
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Fade and scale overlay */
+    z-index: 0;
+}
+
+.project-card:hover::before {
+    opacity: 1; /* Show overlay on hover */
+    transform: scale(1.1); /* Scale overlay slightly */
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Increased height for uniformity */
+    object-fit: cover;
+    border-bottom: 3px solid #ff6347;
+    transition: transform 0.4s ease, filter 0.4s ease; /* Smooth image transition */
+}
+
+.project-card:hover img {
+    transform: scale(1.1) rotate(-2deg); /* Zoom and slight rotation */
+    filter: brightness(1.1); /* Slightly brighten image on hover */
+}
+
+.project-card h3 {
+    padding: 1rem;
+    font-size: 1.5rem; /* Increased title size */
+    margin: 0;
+    color: #ffffff; /* Light color for text */
+    position: relative;
+    z-index: 1; /* Bring text above overlay */
+    transition: color 0.4s, text-shadow 0.4s; /* Smooth title color and shadow transition */
+}
+
+.project-card:hover h3 {
+    color: #ff6347; /* Change title color on hover */
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3); /* Add light shadow to text on hover */
+}

@@ -1,9 +1,10 @@
-.nav-menu{
+.nav-menu {
     list-style: none;
     display: flex;
     align-content: center;
     gap: 30px;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -12,40 +13,95 @@
     width: 100%;
     height: 90px;
     z-index: 10;
-}
-.header-bg{
-background-color: rgba(0,0,0,0.85);
-transition: 0.5s;
-}
-.hamburger{
-    display: none;
-}
-@media screen and (max-width:1040px){
-.nav-menu{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.9);
-    position: absolute;
-    top: 0;
-    left: -100%;
-    z-index: -3;
-    transition: 0.3s;
-}
-.nav-menu.active{
-    left: 0;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
-.nav-menu li{
+.header-bg {
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: 0.5s;
+}
+
+.nav-menu li {
     padding: 1rem 0;
-    
+    position: relative; /* Required for pseudo-elements */
 }
+
 .nav-menu li a {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Adjusted for better spacing */
+    color: #ffffff; /* White text for contrast */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s, transform 0.3s; /* Smooth color and transform transition */
 }
-.hamburger{
-    display: initial;
+
+.nav-menu li a:hover {
+    color: #ffcc00; /* Gold color on hover */
+    transform: scale(1.1); /* Scale up on hover for emphasis */
 }
+
+.nav-menu li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Positioning for the underline effect */
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ffcc00; /* Gold underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for width */
+}
+
+.nav-menu li:hover::after {
+    width: 100%; /* Expand underline on hover */
+    left: 0; /* Center it */
+}
+
+.hamburger {
+    display: none; /* Hide by default */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+@media screen and (max-width: 1040px) {
+    .nav-menu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 0;
+        left: -100%;
+        z-index: -3;
+        transition: left 0.3s ease, background-color 0.3s; /* Smooth transition for background color */
+    }
+
+    .nav-menu.active {
+        left: 0; /* Show menu when active */
+    }
+
+    .nav-menu li {
+        padding: 1rem 0;
+    }
+
+    .nav-menu li a {
+        font-size: 2rem; /* Larger text for mobile */
+        color: #ffffff; /* White text for contrast */
+        transition: color 0.3s, transform 0.3s; /* Smooth color and transform transition */
+    }
+
+    .nav-menu li a:hover {
+        color: #ffcc00; /* Gold color on hover */
+        transform: scale(1.1); /* Scale up on hover for emphasis */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+        background-color: #ff6347; /* Change to a vibrant color */
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px; /* Padding around the hamburger */
+        transition: background-color 0.3s; /* Smooth background color transition */
+    }
+
+    .hamburger:hover {
+        background-color: #ffcc00; /* Change color on hover */
+    }
 }

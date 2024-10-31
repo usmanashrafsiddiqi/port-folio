@@ -1,0 +1,79 @@
+/* src/components/Skills.css */
+.skills {
+    padding: 2rem;
+    background-color: #121212; /* Dark background */
+    text-align: center;
+}
+
+.skills h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #ffffff; /* Light color for headings */
+    transition: color 0.4s ease; /* Smooth color transition */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Spacing between skill cards */
+}
+
+.skill-card {
+    background: linear-gradient(135deg, #ff6347, #6a5acd); /* Colorful gradient background */
+    border-radius: 12px;
+    padding: 2rem; /* Increased padding for more space */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animations */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Position relative for pseudo-elements */
+    overflow: hidden; /* Prevent overflow of pseudo-elements */
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1); /* Subtle overlay */
+    transition: opacity 0.3s; /* Fade effect */
+    z-index: 0;
+}
+
+.skill-card:hover::before {
+    opacity: 0.3; /* Show overlay on hover */
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) rotate(2deg); /* Lift and slight rotation effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5); /* Highlight shadow on hover */
+}
+
+.skill-icon {
+    width: 60px; /* Set icon size */
+    height: 60px; /* Set icon size */
+    margin-bottom: 1rem; /* Space below icon */
+    transition: transform 0.3s ease; /* Icon scaling */
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.2) rotate(-5deg); /* Scale and rotate icon on hover */
+}
+
+.skill-card h3 {
+    color: #ffffff; /* Light color for text */
+    font-size: 1.2rem;
+    margin-top: 0.5rem; /* Space above title */
+    z-index: 1; /* Bring text above overlay */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth title color and scaling transition */
+}
+
+.skill-card:hover h3 {
+    color: #ffeb3b; /* Change title color on hover */
+    transform: translateY(-5px); /* Move title up slightly on hover */
+}

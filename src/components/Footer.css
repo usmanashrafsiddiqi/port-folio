@@ -1,49 +1,74 @@
-.footer{
+.footer {
     width: 100%;
     padding: 6rem 0;
-    background-color: rgba(19 ,19 ,19 ,0.8);
+    background-color: rgba(19, 19, 19, 0.9); 
+    color: #ffffff; 
 }
 
-
-.footer-container{
+.footer-container {
     max-width: 1140px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
-
 }
-.left{
-    height: 100%;
-    max-width: 100%;
+
+.left, .right {
     display: flex;
     flex-direction: column;
     padding: 1rem;
 }
-.location{
-    display: flex;
-    margin-bottom: 0.8rem
-}
-.right{
-    height: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
-.social{
-    margin-top: 1rem;
-}
-h4{
-    font-size: 1.2rem;
-    padding-bottom: 0.7rem;
 
+.location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem; 
 }
-p{
-    font-size: 1.2rem;
+
+.location svg {
+    margin-right: 0.5rem; 
+    fill: #ffcc00; /* Icon color */
 }
-@media screen and (max-width:640px) {
-    .footer-container{
-        grid-template-columns: 1fr;
+
+.social {
+    display: flex;
+    gap: 20px; /* Spacing between social icons */
+    margin-top: 1rem; /* Space above social icons */
+}
+
+.social a {
+    color: #ffffff; /* White for visibility */
+    font-size: 1.5rem; /* Larger size for visibility */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.social a:hover {
+    color: #ffcc00; /* Gold on hover */
+}
+
+h4 {
+    font-size: 1.5rem; /* Larger heading */
+    margin-bottom: 0.5rem; /* Space below heading */
+}
+
+p {
+    font-size: 1.1rem; /* Adjusted font size */
+    line-height: 1.6; /* Better line spacing */
+    margin: 0; /* Remove default margin */
+}
+
+@media screen and (max-width: 640px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        padding: 0 1rem; /* Padding for smaller screens */
+    }
+    
+    h4 {
+        font-size: 1.3rem; /* Adjusted heading size for mobile */
+    }
+    
+    p {
+        font-size: 1rem; /* Smaller font on mobile */
     }
 }

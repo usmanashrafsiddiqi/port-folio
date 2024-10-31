@@ -1,0 +1,55 @@
+/* src/components/Education.css */
+.education {
+    padding: 2rem;
+    background-color: #121212; /* Dark background for contrast */
+    text-align: center;
+}
+
+.education h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #ffffff; /* Light color for headings */
+}
+
+.education-item {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: linear-gradient(135deg, #6a5acd, #ff6347); /* Colorful gradient background */
+    border: 2px solid #ff6347; /* Colorful border */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Slightly darker shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; /* Include shadow transition */
+}
+
+.education-item:hover {
+    transform: scale(1.03); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+    border-color: #6a5acd; /* Change border color on hover */
+}
+
+.education-image {
+    width: 300px; /* Increased width */
+    height: 200px; /* Increased height */
+    border-radius: 8px; /* Round corners */
+    margin-right: 1.5rem; /* Space between image and text */
+}
+
+.education-details {
+    text-align: left; /* Align text to the left */
+}
+
+.education-item h3,
+.education-item p {
+    color: #ffffff; /* Light color for text */
+}
+
+.education-item h3 {
+    font-size: 1.5rem; /* Adjust title size */
+    margin-bottom: 0.5rem; /* Space below title */
+}
+
+.education-item p {
+    font-size: 1rem; /* Adjust paragraph size */
+}
