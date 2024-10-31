@@ -1,15 +1,27 @@
+.hero {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between text and image */
+    width: 100%;
+    height: 80vh; /* Increase height to 80% of the viewport height */
+    padding: 2rem; /* Add padding for spacing */
+    position: relative; /* Positioning context for background */
+    overflow: hidden; /* Hide overflow */
+}
+
 .mask {
     width: 100%;
-    height: 70vh; /* Adjust the height to 70% of the viewport height */
-    position: relative;
+    height: 100%;
+    position: absolute; /* Position the mask absolutely */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Send the background image behind other content */
 }
 
 .intro-img {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
+    object-fit: cover; /* Cover the entire area */
 }
 
 .mask::after {
@@ -20,43 +32,66 @@
     top: 0;
     left: 0;
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.5; /* Adjust opacity to 0.5 for a darker overlay */
 }
 
-.hero {
-    width: 100%;
-    height: auto; /* Change to auto to accommodate content height */
+.content {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    z-index: 1; /* Bring the content above the background */
+    width: 100%; /* Ensure full width */
 }
 
-.hero .content {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%; 
-    text-align: center;
+.text-container {
+    max-width: 500px; /* Limit the width of the text container */
+    color: #ffffff; /* Ensure text color is visible */
+    margin-right: auto; /* Push the text to the left */
 }
 
-.hero .content h1 {
+.text-container h1 {
     font-size: 4rem;
     padding: 0.6rem 0 1.5rem;
 }
 
-.hero .content p {
+.text-container p {
     font-size: 1.4rem;
     font-weight: 200;
     text-transform: uppercase;
 }
 
-.content .btn {
+.text-container .btn {
     margin: 1rem 0.2rem;
 }
 
+.image-container {
+    flex: 0 0 auto; /* Prevent the image container from growing */
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+}
+
+.your-image {
+    width: 300px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: round corners */
+}
+
 @media screen and (max-width: 640px) {
-    .hero .content h1 {
+    .hero {
+        flex-direction: column; /* Stack items for smaller screens */
+        align-items: center; /* Center content */
+        height: auto; /* Adjust height to auto for small screens */
+    }
+    .text-container {
+        text-align: center; /* Center text on smaller screens */
+    }
+    .text-container h1 {
         font-size: 3rem;
         padding: 0.6rem 0 1.5rem;
     }
-    .hero .content p {
+    .text-container p {
         font-size: 1.4rem;   
+    }
+    .your-image {
+        width: 80%; /* Adjust image size for smaller screens */
     }
 }
