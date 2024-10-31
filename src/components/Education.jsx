@@ -8,21 +8,21 @@ const Education = () => {
             degree: "Bachelor of Electronics and Communication",
             year: "2023",
             marks: "CGPA: 7/10",
-            image: "src/assets/download (1).png" // Replace with actual image path
+            image: "/assets/download (1).png" // Replace with actual image path
         },
         {
             institution: "Boys Higher Secondary",
             degree: "Higher Secondary Certificate",
             year: "2018",
             percentage: "83.4%",
-            image: "src/assets/hello.png" // Replace with actual image path
+            image: "/assets/hello.png" // Replace with actual image path
         },
         {
             institution: "Vision School of Education",
             degree: "Secondary School Certificate",
             year: "2016",
             marks: "Percentage: 90%",
-            image: "src/assets/bello.png" // Replace with actual image path
+            image: "/assets/bello.png" // Replace with actual image path
         }
     ];
 
