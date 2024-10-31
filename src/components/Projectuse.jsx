@@ -16,7 +16,7 @@ const Projectuse = () => {
     },
     {
       title: "Weather App",
-      image: "public/assets/flat-user-interface-concept-with-weather-widgets-web-elements-mobile-design_1284-45211.png",
+      image: "/assets/flat-user-interface-concept-with-weather-widgets-web-elements-mobile-design_1284-45211.png",
       link: "https://your-link-to-weather-app.com",
     },
     {
