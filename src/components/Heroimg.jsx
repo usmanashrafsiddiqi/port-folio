@@ -18,7 +18,7 @@ const Heroimg = () => {
           </div>
         </div>
         <div className='image-container'>
-          <img src="public/assets/e010aa13-f5c3-4c05-b0b8-111b7b1b9aeb.png" alt="Your Image" className="your-image" />
+          <img src="/assets/e010aa13-f5c3-4c05-b0b8-111b7b1b9aeb.png" alt="Your Image" className="your-image" />
         </div>
       </div>
     </div>
