@@ -26,12 +26,12 @@ const Projectuse = () => {
     {
       title: "QR Code Generator",
       image: "/assets/qr.png",
-      link: "https://your-link-to-etv.com",
+      link: "https://qr-code-generator-liart-pi.vercel.app/",
     },
     {
       title: "Keyboard Event Tracker",
       image: "/assets/download (2).png",
-      link: "https://your-link-to-etv.com",
+      link: "https://keyboard-event-tracker.vercel.app/",
     },
     {
       title: "BMI Calculator",
