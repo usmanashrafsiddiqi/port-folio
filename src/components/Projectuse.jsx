@@ -41,7 +41,7 @@ const Projectuse = () => {
     {
       title: "Digital Clock",
       image: "/assets/download (18).png",
-      link: "https://bmi-calculator-lemon-mu.vercel.app", // Corrected link
+      link: "digital-clock-lyart-chi.vercel.app", // Corrected link
     }
   ];
 
