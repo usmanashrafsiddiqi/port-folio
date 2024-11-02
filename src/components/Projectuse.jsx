@@ -21,7 +21,7 @@ const Projectuse = () => {
     {
       title: "ToDo Application",
       image: "/assets/download.png",
-      link: "https://todo-list-app-js-usman-projecr.vercel.app/",
+      link: "https://todo-app-html-css-js.vercel.app/",
     },
     {
       title: "QR Code Generator",
