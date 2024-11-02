@@ -12,7 +12,7 @@ const Projectuse = () => {
     {
       title: "Guess the Number Game",
       image: "/assets/images.png",
-      link: "https://your-link-to-number-game.com",
+      link: "guess-the-number-game-gilt.vercel.app",
     },
     {
       title: "Weather App",
