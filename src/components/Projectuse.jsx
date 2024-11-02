@@ -17,7 +17,7 @@ const Projectuse = () => {
     {
       title: "Weather App",
       image: "/assets/flat-user-interface-concept-with-weather-widgets-web-elements-mobile-design_1284-45211.png",
-      link: "https://your-link-to-weather-app.com",
+      link: "weatherapp-using-html-css-js.vercel.app",
     },
     {
       title: "ToDo Application",
@@ -37,7 +37,7 @@ const Projectuse = () => {
     {
       title: "BMI Calculator",
       image: "/assets/pngtree-bmi-cartoon-vector-illustration-depicting-medical-concept-unhealthy-vector-body-vector-png-image_47239794.jpg",
-      link: "file:///C:/Users/usman/Downloads/web%20devvlop/project%20bmi%20calculator/index.html",
+      link: "bmi-calculator-lemon-mu.vercel.app",
     }
   ];
 
