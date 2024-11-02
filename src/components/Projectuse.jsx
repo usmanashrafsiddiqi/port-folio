@@ -1,4 +1,3 @@
-// src/components/Projectuse.jsx
 import React from 'react';
 import './Projectuse.css'; // Import the CSS file
 
@@ -17,7 +16,7 @@ const Projectuse = () => {
     {
       title: "Weather App",
       image: "/assets/flat-user-interface-concept-with-weather-widgets-web-elements-mobile-design_1284-45211.png",
-      link: "weatherapp-using-html-css-js.vercel.app",
+      link: "https://weatherapp-using-html-css-js.vercel.app", // Corrected link
     },
     {
       title: "ToDo Application",
@@ -37,7 +36,7 @@ const Projectuse = () => {
     {
       title: "BMI Calculator",
       image: "/assets/pngtree-bmi-cartoon-vector-illustration-depicting-medical-concept-unhealthy-vector-body-vector-png-image_47239794.jpg",
-      link: "bmi-calculator-lemon-mu.vercel.app",
+      link: "https://bmi-calculator-lemon-mu.vercel.app", // Corrected link
     }
   ];
 
