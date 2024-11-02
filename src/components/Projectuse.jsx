@@ -37,6 +37,11 @@ const Projectuse = () => {
       title: "BMI Calculator",
       image: "/assets/pngtree-bmi-cartoon-vector-illustration-depicting-medical-concept-unhealthy-vector-body-vector-png-image_47239794.jpg",
       link: "https://bmi-calculator-lemon-mu.vercel.app", // Corrected link
+    },
+    {
+      title: "Digital Clock",
+      image: "/assets/download (18).png",
+      link: "https://bmi-calculator-lemon-mu.vercel.app", // Corrected link
     }
   ];
 
