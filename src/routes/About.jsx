@@ -9,11 +9,11 @@ import Education from '../components/Education'; // Import the Education compone
 const About = () => {
     return (
         <div>
-            <Navbar />
+           
             <Heroimg2 heading={"About."} text={"I am a front-end developer"} />
             <Aboutcontent />
             <Education /> {/* Include the Education section */}
-            <Footer />
+          
         </div>
     );
 }

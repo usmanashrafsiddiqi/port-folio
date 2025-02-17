@@ -7,10 +7,10 @@ import Projectuse from '../components/Projectuse'; // Import the Projectuse comp
 const Project = () => {
   return (
     <div>
-      <Navbar />
+    
       <Heroimg2 heading={"PROJECTS."} text={"Some of my recent projects."} />
       <Projectuse /> {/* Add the Projectuse component here */}
-      <Footer />
+      
     </div>
   );
 }

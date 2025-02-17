@@ -3,6 +3,8 @@
     padding: 2rem;
     background-color: #121212; /* Dark background */
     text-align: center;
+    position: relative; /* Needed for animation container */
+    overflow: hidden; /* Hide overflow for animation */
 }
 
 .skills h2 {
@@ -14,9 +16,20 @@
 }
 
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive grid */
-    gap: 1.5rem; /* Spacing between skill cards */
+    display: flex; /* Flexbox for horizontal scrolling */
+    width: max-content; /* Allow container to grow with content */
+    animation: scrollSkills 30s linear infinite; /* Scroll effect for the skills */
+    gap: 1.5rem;
+    margin: 0 auto;
+}
+
+@keyframes scrollSkills {
+    0% {
+        transform: translateX(0); /* Start from the left */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left until content disappears */
+    }
 }
 
 .skill-card {
@@ -31,6 +44,8 @@
     justify-content: center;
     position: relative; /* Position relative for pseudo-elements */
     overflow: hidden; /* Prevent overflow of pseudo-elements */
+    min-width: 180px; /* Set a minimum width for skill cards */
+    max-width: 200px; /* Set a maximum width for consistency */
 }
 
 .skill-card::before {
@@ -76,4 +91,52 @@
 .skill-card:hover h3 {
     color: #ffeb3b; /* Change title color on hover */
     transform: translateY(-5px); /* Move title up slightly on hover */
+}
+
+/* Small screen adjustments for skill size and layout */
+@media screen and (max-width: 650px) {
+    .skills-container {
+        flex-wrap: nowrap; /* No wrapping */
+        justify-content: flex-start; /* Keep items aligned at the start */
+        width: max-content; /* Ensure container spans just enough for all items */
+        animation: scrollSkills 30s linear infinite; /* Keep animation on smaller screens */
+    }
+
+    .skill-card {
+        min-width: 120px; /* Reduce minimum width for smaller screens */
+        max-width: 150px; /* Reduce max width for smaller screens */
+        padding: 1.5rem; /* Decrease padding */
+    }
+
+    .skill-icon {
+        width: 50px; /* Reduce icon size */
+        height: 50px; /* Reduce icon size */
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .skill-card {
+        min-width: 0px; /* Further reduce size on very small screens */
+        max-width: 130px;
+        padding: 1rem; /* Smaller padding */
+    }
+
+    .skill-icon {
+        width: 40px; /* Further reduce icon size */
+        height: 40px;
+    }
+}
+
+/* Large screen adjustments - reduce skill card size */
+@media screen and (min-width: 1024px) {
+    .skill-card {
+        min-width: 160px; /* Reduce skill card size for large screens */
+        max-width: 180px; /* Adjust max width */
+        padding: 1.8rem; /* Decrease padding slightly */
+    }
+
+    .skill-icon {
+        width: 55px; /* Adjust icon size for larger screens */
+        height: 55px; /* Adjust icon size for larger screens */
+    }
 }

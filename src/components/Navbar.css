@@ -1,19 +1,36 @@
-.nav-menu {
-    list-style: none;
-    display: flex;
-    align-content: center;
-    gap: 30px;
-}
-
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space out the title and nav-menu */
     align-items: center;
     position: fixed;
     width: 100%;
     height: 90px;
     z-index: 10;
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    padding: 0 20px; /* Add padding to give some space on both sides */
+    transition: background-color 0.3s ease;
+}
+
+/* Ensure that the navbar items (links) move slightly to the left */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.navbar-title {
+    margin-left: 0; /* No need for margin-left here as padding already applied */
+    font-size: 2rem; /* Adjust size if needed */
+    font-weight: bold;
+    color: white;
+}
+
+/* Hamburger menu adjustments */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    /* Styling for the hamburger menu button */
 }
 
 .header-bg {
@@ -23,40 +40,35 @@
 
 .nav-menu li {
     padding: 1rem 0;
-    position: relative; /* Required for pseudo-elements */
+    position: relative;
 }
 
 .nav-menu li a {
-    font-size: 1.5rem; /* Adjusted for better spacing */
-    color: #ffffff; /* White text for contrast */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s, transform 0.3s; /* Smooth color and transform transition */
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .nav-menu li a:hover {
-    color: #ffcc00; /* Gold color on hover */
-    transform: scale(1.1); /* Scale up on hover for emphasis */
+    color: #ffcc00;
+    transform: scale(1.1);
 }
 
 .nav-menu li::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Positioning for the underline effect */
+    bottom: -5px;
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: #ffcc00; /* Gold underline */
-    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for width */
+    background-color: #ffcc00;
+    transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nav-menu li:hover::after {
-    width: 100%; /* Expand underline on hover */
-    left: 0; /* Center it */
-}
-
-.hamburger {
-    display: none; /* Hide by default */
-    cursor: pointer; /* Change cursor to pointer */
+    width: 100%;
+    left: 0;
 }
 
 @media screen and (max-width: 1040px) {
@@ -71,11 +83,11 @@
         top: 0;
         left: -100%;
         z-index: -3;
-        transition: left 0.3s ease, background-color 0.3s; /* Smooth transition for background color */
+        transition: left 0.3s ease;
     }
 
     .nav-menu.active {
-        left: 0; /* Show menu when active */
+        left: 0;
     }
 
     .nav-menu li {
@@ -83,45 +95,38 @@
     }
 
     .nav-menu li a {
-        font-size: 1.2rem; /* Decreased text size for mobile */
-        color: #ffffff; /* White text for contrast */
-        transition: color 0.3s, transform 0.3s; /* Smooth color and transform transition */
-    }
-
-    .nav-menu li a:hover {
-        color: #ffcc00; /* Gold color on hover */
-        transform: scale(1.1); /* Scale up on hover for emphasis */
+        font-size: 1.2rem;
     }
 
     .hamburger {
-        display: block; /* Show hamburger on mobile */
-        background-color: #ff6347; /* Change to a vibrant color */
-        border-radius: 5px; /* Rounded corners */
-        padding: 10px; /* Padding around the hamburger */
-        transition: background-color 0.3s; /* Smooth background color transition */
+        display: block;
+        background-color: #ff6347;
+        border-radius: 5px;
+        padding: 10px;
+        transition: background-color 0.3s;
     }
 
     .hamburger:hover {
-        background-color: #ffcc00; /* Change color on hover */
+        background-color: #ffcc00;
     }
 }
 
 @media screen and (max-width: 640px) {
     .nav-menu li a {
-        font-size: 1rem; /* Further decrease text size for smaller screens */
+        font-size: 1rem;
     }
 
     .header h1 {
-        font-size: 1.5rem; /* Decrease h1 size for smaller screens */
+        font-size: 1.5rem;
     }
 }
 
 @media screen and (max-width: 400px) {
     .nav-menu li a {
-        font-size: 0.9rem; /* Further decrease text size for very small screens */
+        font-size: 0.9rem;
     }
 
     .header h1 {
-        font-size: 1.2rem; /* Further decrease h1 size for very small screens */
+        font-size: 1.2rem;
     }
 }

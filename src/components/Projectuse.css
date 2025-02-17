@@ -1,82 +1,111 @@
-/* src/components/Projectuse.css */
+/* Projectuse.css */
 .projects {
     padding: 2rem;
     background-color: #121212; /* Dark background */
     text-align: center;
-}
-
-.projects h2 {
+  }
+  
+  .projects h2 {
     margin-bottom: 2rem;
     font-size: 2.5rem; /* Increased font size */
     color: #ffffff; /* Light color for headings */
     transition: color 0.4s ease; /* Smooth color transition */
-}
-
-.projects-container {
+    letter-spacing: 2px; /* Adding space between letters for style */
+  }
+  
+  .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increased minimum width */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted min-width for better spacing */
     gap: 2rem; /* Increased spacing between project cards */
-}
-
-.project-card {
+    justify-items: center; /* Centering the cards within the grid */
+    opacity: 0; /* Initially invisible */
+    transform: translateY(50px); /* Position off-screen */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
+  }
+  
+  /* Styling for the project cards */
+  .project-card {
     background: #1e1e1e; /* Dark card background */
-    border: 3px solid #ff6347; /* Colorful border */
+    border: 3px solid #ffffff; /* White border */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.4s cubic-bezier(0.25, 1.5, 0.5, 1), box-shadow 0.4s ease;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Smooth animation */
     position: relative;
-    max-width: 350px; /* Set a max width for the project card */
+    width: 300px; /* Fixed width for consistent card size */
+    height: 180px; /* Adjusted card height */
     margin: auto; /* Center cards within the grid */
-}
-
-.project-card:hover {
-    transform: translateY(-10px) rotate(3deg); /* Lift and rotate */
-    box-shadow: 0 8px 20px rgba(255, 99, 71, 0.5); /* Highlight shadow on hover */
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 99, 71, 0.4); /* Color overlay */
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease; /* Fade and scale overlay */
-    z-index: 0;
-}
-
-.project-card:hover::before {
-    opacity: 1; /* Show overlay on hover */
-    transform: scale(1.1); /* Scale overlay slightly */
-}
-
-.project-card img {
+    overflow: hidden;
+  }
+  
+  /* Hover effect on cards */
+  .project-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 20px rgba(255, 99, 71, 0.6); /* Stronger shadow with a reddish tint */
+  }
+  
+  
+  /* Styling for the project image */
+  .project-card img {
     width: 100%;
-    height: 200px; /* Increased height for uniformity */
-    object-fit: cover;
-    border-bottom: 3px solid #ff6347;
+    height: 80%; /* Image takes 80% of the card's height */
+    object-fit: cover; /* Ensures image scales to cover space properly */
+    border-bottom: 2px solid #ff6347; /* Border between image and title */
     transition: transform 0.4s ease, filter 0.4s ease; /* Smooth image transition */
-}
-
-.project-card:hover img {
-    transform: scale(1.1) rotate(-2deg); /* Zoom and slight rotation */
-    filter: brightness(1.1); /* Slightly brighten image on hover */
-}
-
-.project-card h3 {
-    padding: 1rem;
-    font-size: 1.5rem; /* Increased title size */
+    transform-origin: center center; /* Ensure scale effect originates from center */
+  }
+  
+  /* Styling for the project title */
+  .project-card h3 {
+    padding: 0.5rem; /* Reduced padding */
+    font-size: 1rem; /* Title font size */
     margin: 0;
     color: #ffffff; /* Light color for text */
-    position: relative;
-    z-index: 1; /* Bring text above overlay */
-    transition: color 0.4s, text-shadow 0.4s; /* Smooth title color and shadow transition */
-}
-
-.project-card:hover h3 {
-    color: #ff6347; /* Change title color on hover */
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3); /* Add light shadow to text on hover */
-}
+    position: absolute;
+    bottom: 0; /* Position title at the bottom of the card */
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1; /* Ensure title stays on top */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for title */
+    padding-bottom: 0.5rem; /* Added padding for some space */
+  }
+  
+  /* Animation for when the card comes into the viewport */
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%); /* Start from the left */
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%); /* Start from the right */
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Class applied when the cards are in the viewport */
+  .projects-container.visible {
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move it to the normal position */
+  }
+  
+  /* Adding animation for the left and right cards */
+  .project-card.left {
+    animation: slideInLeft 1s ease-out forwards;
+  }
+  
+  .project-card.right {
+    animation: slideInRight 1s ease-out forwards;
+  }
+  

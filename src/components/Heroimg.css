@@ -1,7 +1,7 @@
 .hero {
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space between text and image */
+    justify-content: center; /* Center items horizontally */
     width: 100%;
     height: 80vh; /* Increase height to 80% of the viewport height */
     padding: 2rem; /* Add padding for spacing */
@@ -38,19 +38,29 @@
 .content {
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
     z-index: 1; /* Bring the content above the background */
     width: 100%; /* Ensure full width */
+    text-align: center; /* Center text horizontally */
+    margin-top: 5rem; /* Move the content down */
 }
 
 .text-container {
     max-width: 500px; /* Limit the width of the text container */
     color: #ffffff; /* Ensure text color is visible */
-    margin-right: auto; /* Push the text to the left */
+    padding: 1rem; /* Add padding for better spacing */
 }
 
 .text-container h1 {
     font-size: 4rem;
     padding: 0.6rem 0 1.5rem;
+}
+
+/* Apply white-space: nowrap only for larger screens */
+@media screen and (min-width: 650px) {
+    .text-container h1 {
+        white-space: nowrap; /* Prevent text from wrapping to the next line on larger screens */
+    }
 }
 
 .text-container p {
@@ -63,66 +73,32 @@
     margin: 1rem 0.2rem;
 }
 
-.image-container {
-    flex: 0 0 auto; /* Prevent the image container from growing */
-    display: flex;
-    justify-content: center; /* Center image horizontally */
-}
+/* Medium screen adjustments for text size reduction */
+@media screen and (max-width: 650px) {
+    .text-container h1 {
+        font-size: 3rem; /* Reduce size for medium screens */
+    }
 
-.your-image {
-    width: 300px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: round corners */
-}
-
-@media screen and (max-width: 640px) {
-    .hero {
-        flex-direction: column; /* Stack items for smaller screens */
-        align-items: center; /* Center content */
-        height: auto; /* Adjust height to auto for small screens */
+    .text-container p {
+        font-size: 1.2rem; /* Reduce size for medium screens */
     }
 
     .content {
-        flex-direction: column; /* Stack content vertically */
-        align-items: center; /* Center items */
-        width: 100%; /* Ensure full width for content */
-    }
-
-    .text-container {
-        text-align: center; /* Center text on smaller screens */
-        padding: 0 1rem; /* Add padding for better spacing */
-        margin-bottom: 1rem; /* Add margin to create space below */
-    }
-
-    .image-container {
-        margin-top: 0.5rem; /* Adjust space above the image */
-    }
-
-    .text-container h1 {
-        font-size: 2.5rem; /* Decrease font size for smaller screens */
-        padding: 0.4rem 0 1rem; /* Adjust padding */
-    }
-
-    .text-container p {
-        font-size: 1rem; /* Decrease paragraph font size */
-    }
-
-    .your-image {
-        width: 60%; /* Adjust image size for smaller screens */
-        max-width: 200px; /* Set a smaller max width to maintain aspect ratio */
+        margin-top: 4rem; /* Adjust margin-top for medium screens */
     }
 }
 
+/* Small screen adjustments for hiding text */
 @media screen and (max-width: 375px) {
     .text-container h1 {
-        font-size: 1.5rem; /* Further decrease font size for very small screens */
+        font-size: 2rem; /* Further decrease font size for small screens */
     }
 
     .text-container p {
-        font-size: 0.8rem; /* Further decrease paragraph font size for very small screens */
+        display: none; /* Hide "I am a web developer" text on small screens */
     }
 
-    .image-container {
-        margin-top: 0.3rem; /* Reduce space above the image */
+    .content {
+        margin-top: 3rem; /* Adjust margin-top for small screens */
     }
 }

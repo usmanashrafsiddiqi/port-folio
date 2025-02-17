@@ -1,20 +1,56 @@
-label{
+label {
     color: white;
-margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
     padding: 4rem 1rem;
     margin: auto;
     max-width: 600px;
-
+    align-items: center; /* Center align the form elements */
 }
-form input, form textarea{
+
+form input, form textarea {
     margin-bottom: 1rem;
     padding: 10px 18px;
     font-size: 1.2rem;
-    background-color: rgba(255 ,255, 255, 0.1);
-    border-color: rgba(255 ,255, 255, 0.1);
+    background-color: white; /* White background for input fields */
+    border-color: rgba(255, 255, 255, 0.1); /* Border color */
+    color: black; /* Black text inside the input */
+    width: 100%; /* Ensure inputs take the full width */
+    max-width: 500px; /* Optional max width for inputs */
+    border-radius: 5px; /* Rounded corners for input fields */
+}
+
+button.btn {
+    padding: 12px 24px;
+    font-size: 1.2rem;
     color: white;
+    background-color: #ff6347; /* Button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensure button takes the full width of the container */
+    max-width: 200px; /* Optional max width for button */
+}
+
+button.btn:hover {
+    background-color: #e55347; /* Darker shade on hover */
+}
+
+/* Centering button */
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button.btn {
+    width: auto; /* To ensure it's only as wide as necessary */
+    margin-top: 1rem;
 }

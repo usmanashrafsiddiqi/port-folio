@@ -4,14 +4,19 @@ import Navbar from '../components/Navbar';
 import Heading from '../components/Heroimg';
 import Footer from '../components/Footer';
 import Skills from '../components/Skills'; // Import the Skills component
-
+import Projectuse from '../components/Projectuse';
+import About from './About'
+import Contact from './Contact'
 const Home = () => {
   return (
     <div>
-      <Navbar />
+     
       <Heading />
       <Skills /> {/* Add the Skills component here */}
-      <Footer />
+      <Projectuse/>
+      <About/>
+      <Contact/>
+      
     </div>
   );
 };

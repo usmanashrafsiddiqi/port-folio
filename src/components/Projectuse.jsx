@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Projectuse.css'; // Import the CSS file
 
 const Projectuse = () => {
+  const [visible, setVisible] = useState(false); // State to track visibility of the projects container
+  
+  // Data for projects
   const projectData = [
+    {
+      title: "Offical Landing Page of BRISKBOLD",
+      image: "/assets/briskboldbg.png",
+      link: "https://briskbold.com/",
+    },
+    {
+      title: "Offical Landing Page of BRISKBOLDproperties",
+      image: "/assets/briskprobg.png",
+      link: "https://briskboldproperties.com/",
+    },
     {
       title: "GOFOOD Online Ordering Platform",
       image: "/assets/233139734-6778feb3-f788-409a-933c-983445f8d38d.png",
@@ -45,12 +58,37 @@ const Projectuse = () => {
     }
   ];
 
+  // Intersection Observer to detect when the projects container comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setVisible(true); // Set visibility to true when the container is in view
+        }
+      });
+    }, { threshold: 0.5 }); // Trigger when 50% of the container is in the viewport
+
+    const container = document.querySelector('.projects-container');
+    if (container) {
+      observer.observe(container); // Observe the projects container
+    }
+
+    return () => {
+      if (container) {
+        observer.unobserve(container); // Cleanup on component unmount
+      }
+    };
+  }, []);
+
   return (
     <div className="projects">
       <h2>My Projects</h2>
-      <div className="projects-container">
+      <div className={`projects-container ${visible ? 'visible' : ''}`}>
         {projectData.map((project, index) => (
-          <div className="project-card" key={index}>
+          <div
+            className={`project-card ${index % 2 === 0 ? 'left' : 'right'}`} // Decide left or right based on index
+            key={index}
+          >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <img src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
