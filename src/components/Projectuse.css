@@ -1,30 +1,26 @@
-/* Projectuse.css */
 .projects {
     padding: 2rem;
     background-color: #121212; /* Dark background */
     text-align: center;
-  }
-  
-  .projects h2 {
+}
+
+.projects h2 {
     margin-bottom: 2rem;
     font-size: 2.5rem; /* Increased font size */
     color: #ffffff; /* Light color for headings */
     transition: color 0.4s ease; /* Smooth color transition */
     letter-spacing: 2px; /* Adding space between letters for style */
-  }
-  
-  .projects-container {
+}
+
+.projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted min-width for better spacing */
     gap: 2rem; /* Increased spacing between project cards */
     justify-items: center; /* Centering the cards within the grid */
-    opacity: 0; /* Initially invisible */
-    transform: translateY(50px); /* Position off-screen */
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
-  }
-  
-  /* Styling for the project cards */
-  .project-card {
+}
+
+/* Styling for the project cards */
+.project-card {
     background: #1e1e1e; /* Dark card background */
     border: 3px solid #ffffff; /* White border */
     border-radius: 12px;
@@ -36,27 +32,26 @@
     height: 180px; /* Adjusted card height */
     margin: auto; /* Center cards within the grid */
     overflow: hidden;
-  }
-  
-  /* Hover effect on cards */
-  .project-card:hover {
+}
+
+/* Hover effect on cards */
+.project-card:hover {
     transform: scale(1.05); /* Slightly enlarge the card */
     box-shadow: 0 8px 20px rgba(255, 99, 71, 0.6); /* Stronger shadow with a reddish tint */
-  }
-  
-  
-  /* Styling for the project image */
-  .project-card img {
+}
+
+/* Styling for the project image */
+.project-card img {
     width: 100%;
     height: 80%; /* Image takes 80% of the card's height */
     object-fit: cover; /* Ensures image scales to cover space properly */
     border-bottom: 2px solid #ff6347; /* Border between image and title */
     transition: transform 0.4s ease, filter 0.4s ease; /* Smooth image transition */
     transform-origin: center center; /* Ensure scale effect originates from center */
-  }
-  
-  /* Styling for the project title */
-  .project-card h3 {
+}
+
+/* Styling for the project title */
+.project-card h3 {
     padding: 0.5rem; /* Reduced padding */
     font-size: 1rem; /* Title font size */
     margin: 0;
@@ -69,43 +64,4 @@
     z-index: 1; /* Ensure title stays on top */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for title */
     padding-bottom: 0.5rem; /* Added padding for some space */
-  }
-  
-  /* Animation for when the card comes into the viewport */
-  @keyframes slideInLeft {
-    0% {
-      transform: translateX(-100%); /* Start from the left */
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInRight {
-    0% {
-      transform: translateX(100%); /* Start from the right */
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
-  /* Class applied when the cards are in the viewport */
-  .projects-container.visible {
-    opacity: 1; /* Make it visible */
-    transform: translateY(0); /* Move it to the normal position */
-  }
-  
-  /* Adding animation for the left and right cards */
-  .project-card.left {
-    animation: slideInLeft 1s ease-out forwards;
-  }
-  
-  .project-card.right {
-    animation: slideInRight 1s ease-out forwards;
-  }
-  
+}

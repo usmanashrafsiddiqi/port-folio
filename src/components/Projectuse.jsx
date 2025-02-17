@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Projectuse.css'; // Import the CSS file
 
 const Projectuse = () => {
-  const [visible, setVisible] = useState(false); // State to track visibility of the projects container
-  
   // Data for projects
   const projectData = [
     {
@@ -58,32 +56,10 @@ const Projectuse = () => {
     }
   ];
 
-  // Intersection Observer to detect when the projects container comes into view
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setVisible(true); // Set visibility to true when the container is in view
-        }
-      });
-    }, { threshold: 0.5 }); // Trigger when 50% of the container is in the viewport
-
-    const container = document.querySelector('.projects-container');
-    if (container) {
-      observer.observe(container); // Observe the projects container
-    }
-
-    return () => {
-      if (container) {
-        observer.unobserve(container); // Cleanup on component unmount
-      }
-    };
-  }, []);
-
   return (
     <div className="projects">
       <h2>My Projects</h2>
-      <div className={`projects-container ${visible ? 'visible' : ''}`}>
+      <div className="projects-container">
         {projectData.map((project, index) => (
           <div
             className={`project-card ${index % 2 === 0 ? 'left' : 'right'}`} // Decide left or right based on index
