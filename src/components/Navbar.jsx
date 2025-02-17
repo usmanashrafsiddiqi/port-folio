@@ -21,18 +21,22 @@ const Navbar = () => {
 
   window.addEventListener('scroll', handlescroll);
 
+  // Close the menu when a link is clicked
+  const closeMenu = () => {
+    setclick(false);
+  };
+
   return (
     <div className={scroll ? 'header header-bg' : 'header'}>
-      {/* Move 'USMAN ASHRAF' slightly to the right */}
       <Link to={"/"}>
         <h1 className="navbar-title">USMAN ASHRAF</h1>
       </Link>
-      
+
       <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-        <li><Link to={"/"}>Home</Link></li>
-        <li><Link to={"/project"}>Projects</Link></li>
-        <li><Link to={"/about"}>About</Link></li>
-        <li><Link to={"/contact"}>Contact</Link></li>
+        <li><Link to={"/"} onClick={closeMenu}>Home</Link></li>
+        <li><Link to={"/project"} onClick={closeMenu}>Projects</Link></li>
+        <li><Link to={"/about"} onClick={closeMenu}>About</Link></li>
+        <li><Link to={"/contact"} onClick={closeMenu}>Contact</Link></li>
       </ul>
 
       <div className="hamburger" onClick={handleclick}>
