@@ -1,6 +1,10 @@
 .projects {
     padding: 2rem;
-    background-color: #121212; /* Dark background */
+    background-image: url('../assets/servicelatest.jpg'); /* Add your background image here */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: #ffffff; /* Ensures text remains visible */
     text-align: center;
 }
 

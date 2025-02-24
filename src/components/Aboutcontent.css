@@ -1,45 +1,56 @@
-.about{
+.about {
     width: 100%;
-    margin: 3rem 0;
+    margin: 0; /* Remove both top and bottom margins */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     height: 100%;
+    background-image: url('/assets/servicebg.jpg'); /* Add your background image here */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
 }
-.about .left{
+
+.about .left {
     text-align: center;
     margin: auto;
     padding: 1rem;
     max-width: 350px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent overlay to make text more visible */
+    border-radius: 8px; /* Optional: Add rounded corners */
 }
-.about .left p{
+
+.about .left p {
     margin: 1.2rem 0;
 }
-.about .right{
+
+.about .right {
     max-width: 700px;
 }
-.right .img-container{
+
+.right .img-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     position: relative;
-    align-items:center;
+    align-items: center;
     text-align: center;
 }
-.right .img{
-max-width: 90%;
-border: 1px solid #333;
+
+.right .img {
+    max-width: 90%;
+    border: 1px solid #333;
 }
+
 .right .top {
     grid-column: 1 / span 8;
     grid-row: 1;
     padding-top: 20%;
     z-index: 6;
 }
+
 .right .bottom {
     grid-column: 4 / -1;
     grid-row: 1;
-    
     z-index: 5;
 }
-

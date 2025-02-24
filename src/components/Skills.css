@@ -1,7 +1,10 @@
-/* src/components/Skills.css */
 .skills {
     padding: 2rem;
-    background-color: #121212; /* Dark background */
+    background-image: url('../assets/customerbg.png'); /* Add your background image here */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #ffffff; /* Ensures the text remains white for better visibility */
     text-align: center;
     position: relative; /* Needed for animation container */
     overflow: hidden; /* Hide overflow for animation */

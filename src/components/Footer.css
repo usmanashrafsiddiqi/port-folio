@@ -1,8 +1,13 @@
+/* src/components/Footer.css */
 .footer {
     width: 100%;
     padding: 6rem 0;
-    background-color: rgba(19, 19, 19, 0.9); 
+    background-color: rgba(19, 19, 19, 0.9); /* Dark background with opacity */
     color: #ffffff; 
+    background-image: url('../assets/customerfinal.png'); /* Add your background image here */
+    background-size: cover; /* Ensure the image covers the entire footer */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
 }
 
 .footer-container {
@@ -58,6 +63,7 @@ p {
     margin: 0; /* Remove default margin */
 }
 
+/* Mobile Styles */
 @media screen and (max-width: 640px) {
     .footer-container {
         grid-template-columns: 1fr; /* Stack columns on smaller screens */

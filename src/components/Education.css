@@ -3,6 +3,10 @@
     padding: 2rem;
     background-color: #121212; /* Dark background for contrast */
     text-align: center;
+    background-image: url('../assets/servicebantwo.jpg'); /* Add your background image here */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
 }
 
 .education h2 {
